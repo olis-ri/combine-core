@@ -1,5 +1,5 @@
 appnope==0.1.0
-avro==1.11.0
+avro==1.11.3
 backports.shutil-get-terminal-size==1.0.0
 blinker==1.4
 boto3
