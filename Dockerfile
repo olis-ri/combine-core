@@ -10,7 +10,7 @@ RUN apt update --fix-missing && \
     rm -rf /var/lib/apt/lists/*
 
 # App requirments
-ADD app/requirements.txt /requirements.txt
+ADD app/pyproject.toml /pyproject.toml
 
 # App scripts
 COPY app/combine.sql /tmp/combine.sql
@@ -22,7 +22,9 @@ COPY app/ /opt/combine/
 
 
 # Install dependencies
-RUN pip install -r requirements.txt
+# Using poetry to avoid dependecy conflicts.
+RUN pip install poetry && \
+    poetry install
 
 # Install Livy client (note related to args is gone)
 ARG LIVY_TAGGED_RELEASE
