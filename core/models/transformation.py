@@ -84,7 +84,8 @@ class Transformation(models.Model):
 
             # attempt to parse xslt prior to submitting to pyjxslt
             try:
-                etree.fromstring(self.payload.encode('utf-8'))
+                parser = etree.XMLParser(resolve_entities=False)
+                etree.fromstring(self.payload.encode('utf-8'), parser=parser)
             except Exception as err:
                 return str(err)
 

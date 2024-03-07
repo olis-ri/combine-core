@@ -52,8 +52,8 @@ pyjxslt==0.7.0
 pykerberos==1.2.4
 pymongo==4.1.1
 pyparsing==2.2.0
-pytest==4.5.0
-pytest-ordering==0.6
+pytest==7.2.0
+pytest-ordering
 python-dateutil==2.8.2
 pytz==2022.1
 requests==2.31.0

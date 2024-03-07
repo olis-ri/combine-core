@@ -64,7 +64,8 @@ class PythonUDFRecord():
                 try:
 
                     # parse XML string, save
-                    self.xml = etree.fromstring(self.document.encode('utf-8'))
+                    parser = etree.XMLParser(resolve_entities=False)
+                    self.xml = etree.fromstring(self.document.encode('utf-8'), parser=parser)
 
                     # get namespace map, popping None values
                     _nsmap = self.xml.nsmap.copy()
@@ -102,7 +103,8 @@ class PythonUDFRecord():
             try:
 
                 # parse XML string, save
-                self.xml = etree.fromstring(self.document.encode('utf-8'))
+                parser = etree.XMLParser(resolve_entities=False)
+                self.xml = etree.fromstring(self.document.encode('utf-8'), parser=parser)
 
                 # get namespace map, popping None values
                 _nsmap = self.xml.nsmap.copy()
