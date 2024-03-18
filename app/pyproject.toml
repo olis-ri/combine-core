@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-django = "3.2.24"
+django = "3.2.25"
 kombu = "^5.3.5"
 celery = "^5.3.6"
 appnope = "^0.1.4"
